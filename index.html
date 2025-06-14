@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="output.css">
+  <!-- <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script> -->
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+   <style>
+      .animationheading{
+         animation: animationheading 1s ease-out forwards;
+      }
+      #animationimage{
+         animation: animationheading 1s ease-out forwards;
+      }
+      @keyframes animationheading{
+         from {
+            transform: translateY(-500px);
+            opacity: 0;
+         }
+         to {
+            transform: translateY(0);
+            opacity: 1;
+         }
+      }
+      .animationtext{
+         animation: animationtext 1s ease-in-out forwards;
+      }
+      @keyframes animationtext{
+         from {
+            transform: translateX(-500px);
+            opacity: 0;
+         }
+         to {
+            transform: translateX(0);
+            opacity: 1;
+         }
+      }
+      /* for visibal animation */
+      
+      .repeatanimation{
+         animation: repeat 0.6s alternate-reverse infinite;
+      }
+      @keyframes repeat{
+         from{
+            transform: translatey(-10px);
+         }to{
+            transform: translatey(0);
+         }
+      }
+   </style>
+</head>
+<body class="scroll-smooth">
+   <div class="h-[70px] w-full flex fixed top-0 bg-white z-50 shadow-md">
+      <div class="h-[100%] md:w-[20%] w-[40%] overflow-hidden flex justify-center items-center">
+         <img src="./images/ChatGPT_Image_Jun_10__2025__10_52_02_PM-removebg-preview.png" alt="logo" class="h-[80%] w-[160px] object-center">
+      </div>
+      <!-- phone -->
+       <!-- <div class="h-[100%] w-[60%] md:hidden flex items-center justify-end mr-4">
+         <img src="https://img.icons8.com/?size=100&id=17144&format=png&color=000000" alt="icon" class="h-[40px] w-[40px] ">
+       </div> -->
+      <!-- leptop -->
+      <div class="h-full w-[80%] hidden items-center justify-end md:flex">
+         <nav class="h-full mr-12 items-center">
+            <ul class="flex space-x-8 text-lg font-medium h-full items-center">
+               <li class="cursor-pointer">
+                  <a href="#home" class="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+               </li>
+               <li class="cursor-pointer">
+                  <a href="#about" class="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full" onclick="scrollToSection('about')">About us</a>
+               </li>
+               <li class="cursor-pointer">
+                 <a href="#service" class="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">services</a>
+               </li>
+               
+               <li class="cursor-pointer">
+                 <a href="#contact" class="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">Contact us</a>
+               </li>
+            </ul>
+         </nav>
+      </div>
+   </div>
+   <!-- <div class="h-[1px] w-[94%] ml-[3%] bg-black shadow-[4px_4px_20px_rgba(0,0,0,0.4)]"></div> -->
+   <div class="w-[100%]  md:h-[750px] h-auto flex md:flex-row flex-col" id="home">
+      <div class="w-[100%] md:w-[50%] h-[600px] flex justify-center items-center">
+         <div class="w-[100%] ml-7 md:mt-14">
+            <h1 class="font-serif md:text-6xl text-4xl animationheading">Godara Finance Solution India</h1>
+            <p class="text-[#5f51e0] mt-1 text-xl animationtext">A Power management group</p>
+            <p class="text-[#7D7B7B] mt-1 text-lg animationtext">Focusing on one dedicated service allows for deeper refinement, better user experience, and stronger trust built through consistency and dependability</p>
+            <a href="applyloan.html">
+               <button class="relative overflow-hidden h-[50px] w-[150px] bg-green-500 rounded-xl mt-4 cursor-pointer 
+                   after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-blue-500 after:transition-all after:duration-300 
+                   hover:after:w-full text-black hover:text-white z-10">
+                   <span class="relative z-10">Apply for loan</span>
+                </button>
+            </a>
+         </div>
+      </div>
+      <div class="w-[50%] h-[100%] hidden md:flex justify-center items-center">
+         <img src="./images/hero_section_image-removebg-preview.png" alt="heroimage" id="animationimage">
+      </div>
+   </div>
+   <div id="about" class="md:h-[680px] h-[1150px] w-[100%] bg-[#cae9ffa1] flex flex-col md:flex-row">
+      <div class="md:w-[40%] w-[full] h-[30%] md:h-full flex justify-center items-center">
+         <img src="images/ChatGPT_Image_Jun_13__2025__03_18_38_AM-removebg-preview.png" alt="imagelogo" id="visbalanimation" class="visbalanimation-target">
+      </div>
+      <div class="md:w-[60%] w-[100%] h-[70%] md:h-full">
+         <h1 class="md:text-6xl text-2xl md:ml-0 ml-3 font-bold text-blue-600">Your Trusted Loan & Insurance partner</h1>
+         <p class="mt-4 md:mr-15 mr-4 text-sm md:text-lg leading-loose text-[#7D7B7B] md:ml-0 ml-3">
+            Established in 2006, Godara Finance Solution India is a trusted financial services provider committed to supporting individuals and families with accessible and affordable financial solutions. We specialize in offering personal loans, home loans, and gold loans at lower interest rates, tailored to suit your needs. In addition to our loan services, we also provide insurance solutions to help you secure your future. At Godara Finance Solution India, we focus on building lasting relationships through trust, transparency, and a commitment to your financial growth.
+         </p>
+         <div class=" flex w-[full] md:justify-evenly gap-5 md:gap-0 mt-7">
+            <div class="bg-amber-50 md:h-[140px] md:w-[200px] w-[160px] h-[140px] shadow-2xl rounded-2xl flex flex-col justify-center items-center md:ml-0 ml-2">
+               <h1 class="font-bold text-2xl text-green-700">1000+</h1>
+               <p class="mt-1">Lone Approved</p>
+            </div>
+            <div class="bg-amber-50 md:h-[140px] md:w-[200px] w-[160px] h-[140px] shadow-2xl rounded-2xl flex flex-col justify-center items-center">
+               <h1 class="font-bold text-2xl text-blue-700">8.5%</h1>
+               <p class="mt-1">Starting interest</p>
+            </div>
+            <div class="bg-amber-50 h-[140px] w-[200px] shadow-2xl rounded-2xl hidden flex-col justify-center items-center md:flex">
+               <h1 class="font-bold text-2xl text-green-700">1000+</h1>
+               <p class="mt-1">Happy Customer</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="md:h-[650px] h-auto w-full " id="service">
+      <!-- first servise -->
+      <h1 class="text-center text-4xl pt-7 font-bold text-blue-600">Our Loan & Insurance Services</h1>
+      <p class="text-[#7D7B7B] text-center mt-4">We offer comprehensive financial solutions tailored to your needs, featuring competitive interest rates, flexible loan options, and a commitment to excellent customer service that you can trust.</p>
+      <div class="flex md:justify-evenly justify-center items-center mt-7 md:flex-row flex-col md:gap-0 gap-4">
+         <div class="md:h-[400px] md:w-[230px] h-[450px] w-[85%] bg-white rounded-2xl flex flex-col justify-center items-center shadow-2xl">
+            <img src="https://img.icons8.com/?size=100&id=80347&format=png&color=000000" alt="home" class="rounded-[50%] h-[70px] repeatanimation">
+            <h3 class="mt-3 text-xl text-blue-600 font-bold font-serif">Home Loans</h3>
+            <p class="text-center text-sm text-[#7D7B7B]">Get your dream home with our competitive home loan rates.Quick approval and flexible repayment option</p>
+            <li class="text-blue-400 mt-2">low intrest rate</li>
+            <li class="text-blue-400 mt-2">Quick Approvel</li>
+            <li class="text-blue-400 mt-2">flexible Terms</li>
+         </div>
+
+         <!-- second servise -->
+         <div class="md:h-[400px] md:w-[230px] h-[450px] w-[85%] bg-white rounded-2xl flex flex-col justify-center items-center shadow-2xl">
+            <img src="https://img.icons8.com/?size=100&id=20749&format=png&color=000000" alt="personal" class="rounded-[50%] h-[70px] repeatanimation">
+            <h3 class="mt-3 text-xl text-blue-600 font-bold font-serif">personal Loans</h3>
+            <p class="text-center text-sm text-[#7D7B7B]">Meet your personal financial needs with our hassi-free personal loans at atrrective intrest</p>
+            <li class="text-blue-400 mt-2">low intrest rate</li>
+            <li class="text-blue-400 mt-2">Instant Approvel</li>
+            <li class="text-blue-400 mt-2">flexible Terms</li>
+         </div>
+
+         <!-- third servise -->
+         <div class="md:h-[400px] md:w-[230px] h-[450px] w-[85%] bg-white rounded-2xl flex flex-col justify-center items-center shadow-2xl">
+            <img src="https://cdn-icons-png.flaticon.com/512/15150/15150868.png " alt="home" class="rounded-[50%] h-[70px] repeatanimation">
+            <h3 class="mt-3 text-xl text-blue-600 font-bold font-serif">Vehicle Loans</h3>
+            <p class="text-center text-sm text-[#7D7B7B]">Drive your dream car or bike today.We offer vehicle loans with the lowest intrest rate in the market</p>
+            <li class="text-blue-400 mt-2">car loan</li>
+            <li class="text-blue-400 mt-2">bike loan</li>
+            <li class="text-blue-400 mt-2">Used vehicle loan</li>
+         </div>
+         <!-- fourthservise -->
+         <div class="md:h-[400px] md:w-[230px] h-[450px] w-[85%] bg-white rounded-2xl flex flex-col justify-center items-center shadow-2xl">
+            <img src="https://img.icons8.com/?size=100&id=16231&format=png&color=000000" alt="home" class="rounded-[50%] h-[70px] repeatanimation">
+            <h3 class="mt-3 text-xl text-blue-600 font-bold font-serif">Insurance</h3>
+            <p class="text-center text-sm text-[#7D7B7B]">protect your assets and loved once with our comprehensive insurance plans tailored to your need </p>
+            <li class="text-blue-400 mt-2">vechicle insurance</li>
+            <li class="text-blue-400 mt-2">Eassy steps</li>
+            <li class="text-blue-400 mt-2">Trems & condition</li>
+         </div>
+      </div>
+   </div>
+   <!-- contect form -->
+   <div class="h-[800px] w-full bg-green-100 " id="contact">
+      <h1 class="text-blue-600 font-bold text-4xl mt-8 text-center pt-5">Get In Touch</h1>
+      <p class="text-[#7D7B7B] text-center mt-3">Ready to start your financial journey? Contact us today for free consuition</p>
+      <div class="flex ">
+         <div class="md:h-[600px] h-auto md:w-[50%] w-[100%] flex justify-center items-center mt-6 ">
+            <form action="#" class="md:h-[100%] h-[600px] md:w-[80%] w-[90%] md:ml-0 ml-5px" id="contactform">
+               <div class="h-[100%] md:w-[80%] w-[100%] bg-white rounded-2xl shadow-[8px_0_15px_rgba(0,0,0,0.3)]">
+                  <p class="text-blue-500 text-xl font-bold md:pl-8 pt-5 pl-4">Name</p>
+                  <input type="text" class="bg-gray-200 mt-2 rounded-xl md:ml-8 ml-4 w-[85%] h-[45px] pl-1 outline-none " placeholder="Enter your name " id="name">
+                  <p class="text-blue-500 text-xl font-bold md:pl-8 pl-4  pt-7">Mobile number</p>
+                  <input type="number" class="bg-gray-200 mt-2 rounded-xl md:ml-8 ml-4 w-[85%] h-[45px] pl-1 outline-none " placeholder="Enter your number " id="number">
+                  <p class="text-blue-500 text-xl font-bold md:pl-8 pl-4 pt-7">Message</p>
+                  <textarea name="message" id="message" class="bg-gray-200 md:ml-8 ml-4 rounded-xl w-[85%] h-[140px] mt-2 pl-2 outline-none" id="message"></textarea>
+                  <button type="button" class="bg-green-400 h-[50px] rounded-xl w-[85%] md:ml-8 ml-4 mt-8 cursor-pointer hover:bg-green-300 transition-all duration-100" onclick="sendmessage(event)">Submit</button>
+               </div>
+            </form>
+
+         </div>
+         <div class="h-[600px] w-[50%] mt-6 hidden flex-col justify-evenly items-center md:flex">
+            <div class="h-[170px] w-[550px] bg-white rounded-xl shadow-[8px_0_15px_rgba(0,0,0,0.3)] flex">
+               <div class="w-[20%] h-full flex justify-center items-center">
+                  <img src="https://img.icons8.com/?size=100&id=107436&format=png&color=000000" alt="addressicon" class="h-[60px] repeatanimation">
+               </div>
+               <div class="w-[80%] h-full flex justify-center flex-col">
+                  <h1 class="text-blue-500 font-bold text-xl">Address</h1>
+                  <p class="text-[#7D7B7B] pr-5">Gandhi chock ,main market,near kishan beej bandhar,surjgarh,333029</p>
+               </div>
+            </div>
+            <div class="h-[170px] w-[550px] bg-white rounded-xl shadow-[8px_0_15px_rgba(0,0,0,0.3)] flex">
+               <div class="w-[20%] h-full flex justify-center items-center">
+                  <img src="https://img.icons8.com/?size=100&id=108644&format=png&color=000000" alt="addressicon" class="h-[60px] repeatanimation">
+               </div>
+               <div class="w-[80%] h-full flex justify-center flex-col">
+                  <h1 class="text-blue-500 font-bold text-xl">Phone</h1>
+                  <p class="text-[#7D7B7B] pr-5">+91 9680505799</p>
+                  <p class="text-[#7D7B7B] pr-5">+91 8502994824</p>
+               </div>
+            </div>
+            <div class="h-[170px] w-[550px] bg-white rounded-xl shadow-[8px_0_15px_rgba(0,0,0,0.3)] flex">
+               <div class="w-[20%] h-full flex justify-center items-center">
+                  <img src="https://img.icons8.com/?size=100&id=108813&format=png&color=000000" alt="addressicon" class="h-[60px] repeatanimation">
+               </div>
+               <div class="w-[80%] h-full flex justify-center flex-col">
+                  <h1 class="text-blue-500 font-bold text-xl">Email</h1>
+                  <p class="text-[#7D7B7B] pr-5">godarafinance8@gmail.com</p>
+                  <p class="text-[#7D7B7B] pr-5">rajgodara@gmail.com</p>
+               </div>
+            </div>
+            
+         </div>
+      </div>
+   </div>
+   <footer>
+      <div class="md:h-[300px] h-auto w-full bg-blue-600 flex flex-col md:flex-row" >
+         <div class="md:w-[25%] w-[100%] h-full flex flex-col items-center ml-4">
+            <h1 class="font-bold text-3xl text-white mt-4">Godara Finance Solution</h1>
+            <p class="text-white mt-2 md:mr-0 mr-6">Your trusted partner in financel planing and welth management Securing furtures since 2007</p>
+            <div class="flex items-center mt-3 gap-7 w-[100%]">
+               <a href="#"><img src="https://img.icons8.com/?size=100&id=BrU2BBoRXiWq&format=png&color=000000" alt="insta logo" class="h-[50px]"></a>
+               <a href="#"><img src="https://img.icons8.com/?size=100&id=z657ovoGgS2o&format=png&color=000000" alt="insta logo" class="h-[50px]"></a>
+               <a href="#"><img src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=000000" alt="insta logo" class="h-[50px]"></a>
+            </div>
+         </div>
+         <div class="md:w-[25%] w-[100%] h-full flex flex-col pl-7 md:pl-12">
+            <h1 class="font-bold text-3xl text-white mt-4">Quick Links</h1>
+            <a href="#home" class="text-white mt-2">Home</a>
+            <a href="#services" class="text-white mt-2">service</a>
+            <a href="#about" class="text-white mt-2">About US</a>
+            <a href="#contact" class="text-white mt-2">Contact Us</a>
+            
+         </div>
+         <div class="md:w-[25%] w-[100%] h-full flex flex-col items-start ml-4">
+            <h1 class="font-bold text-3xl text-white mt-4">Contact Info</h1>
+            <p class="text-white mt-2">Gandhi chock ,main market,near kishan beej bandhar,surjgarh,333029</p>
+            <p class="text-white mt-2"><img src="https://img.icons8.com/?size=100&id=WV326xpsBMyb&format=png&color=000000" alt="icon" class="h-[20px] inline mr-1">+919057164791</p>
+            <p class="text-white mt-2"><img src="https://img.icons8.com/?size=100&id=108806&format=png&color=000000" alt="icon" class="h-[30px] inline mr-1">godarafinance8@gmail.com</p>
+            <p class="text-white mt-2"><img src="https://img.icons8.com/?size=100&id=21517&format=png&color=000000" alt="icon" class="h-[30px] inline mr-1">Mon-sun 9AM-6PM</p>
+            
+         </div>
+      </div>
+   </footer>
+   <script src="index.js"></script>
+</body>
+</html>
