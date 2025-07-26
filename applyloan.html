@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form - Godara Finance Solution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body class="bg-gray-50">
+
+    <header>...</header>
+
+    <main class="pt-24">
+        <section id="application-form" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg">
+                    <h1 id="form-title" class="text-3xl md:text-4xl font-bold text-blue-700 text-center">Application Form</h1>
+                    <p class="text-gray-500 text-center mt-2 mb-8">Please fill in your details below. Our team will contact you shortly.</p>
+
+                    <form id="loan-application-form">
+                        <input type="hidden" id="loanType" name="loan_type">
+
+                        <div class="grid grid-cols-1 gap-6">
+                            <div>
+                                <label for="name" class="font-semibold text-gray-700">Full Name</label>
+                                <input type="text" id="name" name="name" class="mt-2 w-full p-3 bg-gray-100 rounded-lg outline-none focus:ring-2 focus:ring-blue-400" required>
+                            </div>
+                            <div>
+                                <label for="number" class="font-semibold text-gray-700">Mobile Number</label>
+                                <input type="tel" id="number" name="number" class="mt-2 w-full p-3 bg-gray-100 rounded-lg outline-none focus:ring-2 focus:ring-blue-400" required pattern="\d{10}">
+                            </div>
+                            <div>
+                                <label for="address" class="font-semibold text-gray-700">Full Address</label>
+                                <textarea id="address" name="address" rows="3" class="mt-2 w-full p-3 bg-gray-100 rounded-lg outline-none focus:ring-2 focus:ring-blue-400" required></textarea>
+                            </div>
+
+                            <div class="border-t pt-6 mt-4">
+                               <p class="font-semibold text-gray-700 mb-4">Upload Documents (Optional)</p>
+                               <p class="text-sm text-gray-500 mb-4">Note: Please have your documents ready. Our representative will contact you for secure collection.</p>
+                               <div class="space-y-4">
+                                   <div>
+                                       <label for="pan-card" class="block text-sm font-medium text-gray-600">PAN Card</label>
+                                       <input type="file" id="pan-card" name="pan-card" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                   </div>
+                                   <div>
+                                       <label for="aadhar-card" class="block text-sm font-medium text-gray-600">Aadhar Card</label>
+                                       <input type="file" id="aadhar-card" name="aadhar-card" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                   </div>
+                                   <div>
+                                       <label for="photo" class="block text-sm font-medium text-gray-600">Passport Size Photo</label>
+                                       <input type="file" id="photo" name="photo" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 text-center">
+                            <button type="submit" class="w-full max-w-sm bg-green-500 h-14 rounded-xl text-white font-bold text-lg cursor-pointer hover:bg-green-600 transition-all duration-300">Submit Application</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>...</footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. Set the form title based on URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const loanType = urlParams.get('type');
+        
+        const formTitle = document.getElementById('form-title');
+        const loanTypeInput = document.getElementById('loanType');
+        
+        if (loanType) {
+            formTitle.innerText = `Application for ${loanType}`;
+            loanTypeInput.value = loanType;
+        }
+
+        // 2. Initialize EmailJS
+        (function(){
+            emailjs.init({ publicKey: "SLU7axNetQo_WJo-3" }); // Your public key
+        })();
+
+        // 3. Handle form submission
+        const applicationForm = document.getElementById('loan-application-form');
+        applicationForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get file inputs
+            const panFile = document.getElementById('pan-card').files[0];
+            const aadharFile = document.getElementById('aadhar-card').files[0];
+            const photoFile = document.getElementById('photo').files[0];
+            
+            // Construct a message about the uploaded files
+            let fileInfo = "\n\n--- Documents Status ---\n";
+            fileInfo += `PAN Card: ${panFile ? panFile.name : 'Not selected'}\n`;
+            fileInfo += `Aadhar Card: ${aadharFile ? aadharFile.name : 'Not selected'}\n`;
+            fileInfo += `Photo: ${photoFile ? photoFile.name : 'Not selected'}\n`;
+            fileInfo += "\nPlease contact the applicant to collect these documents securely.";
+
+            const params = {
+                loan_type: document.getElementById("loanType").value,
+                name: document.getElementById("name").value,
+                number: document.getElementById("number").value,
+                address: document.getElementById("address").value,
+                document_info: fileInfo, // Add the file info to the email body
+                time: new Date().toLocaleString(),
+            };
+
+            const serviceID = "YOUR_SERVICE_ID"; // Your EmailJS Service ID
+            const templateID = "YOUR_TEMPLATE_ID"; // Your EmailJS Template ID
+
+            emailjs.send(serviceID, templateID, params)
+                .then(res => {
+                    alert("Application submitted successfully! Our team will contact you shortly.");
+                    applicationForm.reset();
+                    formTitle.innerText = "Application Form"; // Reset title after submission
+                })
+                .catch(err => {
+                    console.error("EmailJS Error:", err);
+                    alert("An error occurred. Please try again.\n" + JSON.stringify(err));
+                });
+        });
+    });
+    </script>
+</body>
+</html>

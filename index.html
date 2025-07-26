@@ -1,260 +1,447 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-   <link rel="stylesheet" href="output.css">
-  <!-- <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script> -->
-   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Godara Finance Solution India offers fast and reliable personal, home, and vehicle loans with competitive interest rates starting at 8.5%. Apply online today!">
+    <meta name="keywords" content="finance, loan, personal loan, home loan, vehicle loan, insurance, Godara Finance, low interest loan">
+    <title>Godara Finance Solution India - Your Trusted Loan & Insurance Partner</title>
+    
+    <meta property="og:title" content="Godara Finance Solution India">
+    <meta property="og:description" content="Reliable and affordable financial solutions. Personal, home, and vehicle loans at competitive rates.">
+    <meta property="og:image" content="./images/hero_section_image-removebg-preview.png">
+    <meta property="og:url" content="YOUR_WEBSITE_URL_HERE">
+    <meta property="og:type" content="website">
 
-   <style>
-      .animationheading{
-         animation: animationheading 1s ease-out forwards;
-      }
-      #animationimage{
-         animation: animationheading 1s ease-out forwards;
-      }
-      @keyframes animationheading{
-         from {
-            transform: translateY(-500px);
-            opacity: 0;
-         }
-         to {
-            transform: translateY(0);
-            opacity: 1;
-         }
-      }
-      .animationtext{
-         animation: animationtext 1s ease-in-out forwards;
-      }
-      @keyframes animationtext{
-         from {
-            transform: translateX(-500px);
-            opacity: 0;
-         }
-         to {
-            transform: translateX(0);
-            opacity: 1;
-         }
-      }
-      /* for visibal animation */
-      
-      .repeatanimation{
-         animation: repeat 0.6s alternate-reverse infinite;
-      }
-      @keyframes repeat{
-         from{
-            transform: translatey(-10px);
-         }to{
-            transform: translatey(0);
-         }
-      }
-   </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <style>
+        /* --- ANIMATIONS --- */
+        .fade-in-down {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+        @keyframes fadeInDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .fade-in-left {
+            animation: fadeInLeft 1s ease-in-out forwards;
+        }
+        @keyframes fadeInLeft {
+            from { transform: translateX(-30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* Bouncing animation for icons */
+        .bounce-icon {
+            animation: bounce 1.5s infinite alternate;
+        }
+        @keyframes bounce {
+            from { transform: translateY(-10px); }
+            to { transform: translateY(0); }
+        }
+
+        /* --- UTILITIES --- */
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
 </head>
-<body class="scroll-smooth">
-   <div class="h-[70px] w-full flex fixed top-0 bg-white z-50 shadow-md">
-      <div class="h-[100%] md:w-[20%] w-[40%] overflow-hidden flex justify-center items-center">
-         <img src="./images/ChatGPT_Image_Jun_10__2025__10_52_02_PM-removebg-preview.png" alt="logo" class="h-[80%] w-[160px] object-center">
-      </div>
-      <!-- phone -->
-       <!-- <div class="h-[100%] w-[60%] md:hidden flex items-center justify-end mr-4">
-         <img src="https://img.icons8.com/?size=100&id=17144&format=png&color=000000" alt="icon" class="h-[40px] w-[40px] ">
-       </div> -->
-      <!-- leptop -->
-      <div class="h-full w-[80%] hidden items-center justify-end md:flex">
-         <nav class="h-full mr-12 items-center">
-            <ul class="flex space-x-8 text-lg font-medium h-full items-center">
-               <li class="cursor-pointer">
-                  <a href="#home" class="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
-               </li>
-               <li class="cursor-pointer">
-                  <a href="#about" class="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full" onclick="scrollToSection('about')">About us</a>
-               </li>
-               <li class="cursor-pointer">
-                 <a href="#service" class="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">services</a>
-               </li>
-               
-               <li class="cursor-pointer">
-                 <a href="#contact" class="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">Contact us</a>
-               </li>
-            </ul>
-         </nav>
-      </div>
-   </div>
-   <!-- <div class="h-[1px] w-[94%] ml-[3%] bg-black shadow-[4px_4px_20px_rgba(0,0,0,0.4)]"></div> -->
-   <div class="w-[100%]  md:h-[750px] h-auto flex md:flex-row flex-col" id="home">
-      <div class="w-[100%] md:w-[50%] h-[600px] flex justify-center items-center">
-         <div class="w-[100%] ml-7 md:mt-14">
-            <h1 class="font-serif md:text-6xl text-4xl animationheading">Godara Finance Solution India</h1>
-            <p class="text-[#5f51e0] mt-1 text-xl animationtext">A Power management group</p>
-            <p class="text-[#7D7B7B] mt-1 text-lg animationtext">Focusing on one dedicated service allows for deeper refinement, better user experience, and stronger trust built through consistency and dependability</p>
-            <a href="applyloan.html">
-               <button class="relative overflow-hidden h-[50px] w-[150px] bg-green-500 rounded-xl mt-4 cursor-pointer 
-                   after:absolute after:top-0 after:left-0 after:w-0 after:h-full after:bg-blue-500 after:transition-all after:duration-300 
-                   hover:after:w-full text-black hover:text-white z-10">
-                   <span class="relative z-10">Apply for loan</span>
-                </button>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <header class="h-18 w-full flex fixed top-0 bg-white/80 backdrop-blur-sm z-50 shadow-md transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#home" class="flex items-center">
+                <img src="https://i.ibb.co/L5w2sWq/ChatGPT-Image-Jun-10-2025-10-52-02-PM-removebg-preview.png" alt="Godara Finance Logo" class="h-14 w-auto">
             </a>
-         </div>
-      </div>
-      <div class="w-[50%] h-[100%] hidden md:flex justify-center items-center">
-         <img src="./images/hero_section_image-removebg-preview.png" alt="heroimage" id="animationimage">
-      </div>
-   </div>
-   <div id="about" class="md:h-[680px] h-[1150px] w-[100%] bg-[#cae9ffa1] flex flex-col md:flex-row">
-      <div class="md:w-[40%] w-[full] h-[30%] md:h-full flex justify-center items-center">
-         <img src="images/ChatGPT_Image_Jun_13__2025__03_18_38_AM-removebg-preview.png" alt="imagelogo" id="visbalanimation" class="visbalanimation-target">
-      </div>
-      <div class="md:w-[60%] w-[100%] h-[70%] md:h-full">
-         <h1 class="md:text-6xl text-2xl md:ml-0 ml-3 font-bold text-blue-600">Your Trusted Loan & Insurance partner</h1>
-         <p class="mt-4 md:mr-15 mr-4 text-sm md:text-lg leading-loose text-[#7D7B7B] md:ml-0 ml-3">
-            Established in 2006, Godara Finance Solution India is a trusted financial services provider committed to supporting individuals and families with accessible and affordable financial solutions. We specialize in offering personal loans, home loans, and gold loans at lower interest rates, tailored to suit your needs. In addition to our loan services, we also provide insurance solutions to help you secure your future. At Godara Finance Solution India, we focus on building lasting relationships through trust, transparency, and a commitment to your financial growth.
-         </p>
-         <div class=" flex w-[full] md:justify-evenly gap-5 md:gap-0 mt-7">
-            <div class="bg-amber-50 md:h-[140px] md:w-[200px] w-[160px] h-[140px] shadow-2xl rounded-2xl flex flex-col justify-center items-center md:ml-0 ml-2">
-               <h1 class="font-bold text-2xl text-green-700">1000+</h1>
-               <p class="mt-1">Lone Approved</p>
-            </div>
-            <div class="bg-amber-50 md:h-[140px] md:w-[200px] w-[160px] h-[140px] shadow-2xl rounded-2xl flex flex-col justify-center items-center">
-               <h1 class="font-bold text-2xl text-blue-700">8.5%</h1>
-               <p class="mt-1">Starting interest</p>
-            </div>
-            <div class="bg-amber-50 h-[140px] w-[200px] shadow-2xl rounded-2xl hidden flex-col justify-center items-center md:flex">
-               <h1 class="font-bold text-2xl text-green-700">1000+</h1>
-               <p class="mt-1">Happy Customer</p>
-            </div>
-         </div>
-      </div>
-   </div>
-   <div class="md:h-[650px] h-auto w-full " id="service">
-      <!-- first servise -->
-      <h1 class="text-center text-4xl pt-7 font-bold text-blue-600">Our Loan & Insurance Services</h1>
-      <p class="text-[#7D7B7B] text-center mt-4">We offer comprehensive financial solutions tailored to your needs, featuring competitive interest rates, flexible loan options, and a commitment to excellent customer service that you can trust.</p>
-      <div class="flex md:justify-evenly justify-center items-center mt-7 md:flex-row flex-col md:gap-0 gap-4">
-         <div class="md:h-[400px] md:w-[230px] h-[450px] w-[85%] bg-white rounded-2xl flex flex-col justify-center items-center shadow-2xl">
-            <img src="https://img.icons8.com/?size=100&id=80347&format=png&color=000000" alt="home" class="rounded-[50%] h-[70px] repeatanimation">
-            <h3 class="mt-3 text-xl text-blue-600 font-bold font-serif">Home Loans</h3>
-            <p class="text-center text-sm text-[#7D7B7B]">Get your dream home with our competitive home loan rates.Quick approval and flexible repayment option</p>
-            <li class="text-blue-400 mt-2">low intrest rate</li>
-            <li class="text-blue-400 mt-2">Quick Approvel</li>
-            <li class="text-blue-400 mt-2">flexible Terms</li>
-         </div>
-
-         <!-- second servise -->
-         <div class="md:h-[400px] md:w-[230px] h-[450px] w-[85%] bg-white rounded-2xl flex flex-col justify-center items-center shadow-2xl">
-            <img src="https://img.icons8.com/?size=100&id=20749&format=png&color=000000" alt="personal" class="rounded-[50%] h-[70px] repeatanimation">
-            <h3 class="mt-3 text-xl text-blue-600 font-bold font-serif">personal Loans</h3>
-            <p class="text-center text-sm text-[#7D7B7B]">Meet your personal financial needs with our hassi-free personal loans at atrrective intrest</p>
-            <li class="text-blue-400 mt-2">low intrest rate</li>
-            <li class="text-blue-400 mt-2">Instant Approvel</li>
-            <li class="text-blue-400 mt-2">flexible Terms</li>
-         </div>
-
-         <!-- third servise -->
-         <div class="md:h-[400px] md:w-[230px] h-[450px] w-[85%] bg-white rounded-2xl flex flex-col justify-center items-center shadow-2xl">
-            <img src="https://cdn-icons-png.flaticon.com/512/15150/15150868.png " alt="home" class="rounded-[50%] h-[70px] repeatanimation">
-            <h3 class="mt-3 text-xl text-blue-600 font-bold font-serif">Vehicle Loans</h3>
-            <p class="text-center text-sm text-[#7D7B7B]">Drive your dream car or bike today.We offer vehicle loans with the lowest intrest rate in the market</p>
-            <li class="text-blue-400 mt-2">car loan</li>
-            <li class="text-blue-400 mt-2">bike loan</li>
-            <li class="text-blue-400 mt-2">Used vehicle loan</li>
-         </div>
-         <!-- fourthservise -->
-         <div class="md:h-[400px] md:w-[230px] h-[450px] w-[85%] bg-white rounded-2xl flex flex-col justify-center items-center shadow-2xl">
-            <img src="https://img.icons8.com/?size=100&id=16231&format=png&color=000000" alt="home" class="rounded-[50%] h-[70px] repeatanimation">
-            <h3 class="mt-3 text-xl text-blue-600 font-bold font-serif">Insurance</h3>
-            <p class="text-center text-sm text-[#7D7B7B]">protect your assets and loved once with our comprehensive insurance plans tailored to your need </p>
-            <li class="text-blue-400 mt-2">vechicle insurance</li>
-            <li class="text-blue-400 mt-2">Eassy steps</li>
-            <li class="text-blue-400 mt-2">Trems & condition</li>
-         </div>
-      </div>
-   </div>
-   <!-- contect form -->
-   <div class="h-[800px] w-full bg-green-100 " id="contact">
-      <h1 class="text-blue-600 font-bold text-4xl mt-8 text-center pt-5">Get In Touch</h1>
-      <p class="text-[#7D7B7B] text-center mt-3">Ready to start your financial journey? Contact us today for free consuition</p>
-      <div class="flex ">
-         <div class="md:h-[600px] h-auto md:w-[50%] w-[100%] flex justify-center items-center mt-6 ">
-            <form action="#" class="md:h-[100%] h-[600px] md:w-[80%] w-[90%] md:ml-0 ml-5px" id="contactform">
-               <div class="h-[100%] md:w-[80%] w-[100%] bg-white rounded-2xl shadow-[8px_0_15px_rgba(0,0,0,0.3)]">
-                  <p class="text-blue-500 text-xl font-bold md:pl-8 pt-5 pl-4">Name</p>
-                  <input type="text" class="bg-gray-200 mt-2 rounded-xl md:ml-8 ml-4 w-[85%] h-[45px] pl-1 outline-none " placeholder="Enter your name " id="name">
-                  <p class="text-blue-500 text-xl font-bold md:pl-8 pl-4  pt-7">Mobile number</p>
-                  <input type="number" class="bg-gray-200 mt-2 rounded-xl md:ml-8 ml-4 w-[85%] h-[45px] pl-1 outline-none " placeholder="Enter your number " id="number">
-                  <p class="text-blue-500 text-xl font-bold md:pl-8 pl-4 pt-7">Message</p>
-                  <textarea name="message" id="message" class="bg-gray-200 md:ml-8 ml-4 rounded-xl w-[85%] h-[140px] mt-2 pl-2 outline-none" id="message"></textarea>
-                  <button type="button" class="bg-green-400 h-[50px] rounded-xl w-[85%] md:ml-8 ml-4 mt-8 cursor-pointer hover:bg-green-300 transition-all duration-100" onclick="sendmessage(event)">Submit</button>
-               </div>
-            </form>
-
-         </div>
-         <div class="h-[600px] w-[50%] mt-6 hidden flex-col justify-evenly items-center md:flex">
-            <div class="h-[170px] w-[550px] bg-white rounded-xl shadow-[8px_0_15px_rgba(0,0,0,0.3)] flex">
-               <div class="w-[20%] h-full flex justify-center items-center">
-                  <img src="https://img.icons8.com/?size=100&id=107436&format=png&color=000000" alt="addressicon" class="h-[60px] repeatanimation">
-               </div>
-               <div class="w-[80%] h-full flex justify-center flex-col">
-                  <h1 class="text-blue-500 font-bold text-xl">Address</h1>
-                  <p class="text-[#7D7B7B] pr-5">Gandhi chock ,main market,near kishan beej bandhar,surjgarh,333029</p>
-               </div>
-            </div>
-            <div class="h-[170px] w-[550px] bg-white rounded-xl shadow-[8px_0_15px_rgba(0,0,0,0.3)] flex">
-               <div class="w-[20%] h-full flex justify-center items-center">
-                  <img src="https://img.icons8.com/?size=100&id=108644&format=png&color=000000" alt="addressicon" class="h-[60px] repeatanimation">
-               </div>
-               <div class="w-[80%] h-full flex justify-center flex-col">
-                  <h1 class="text-blue-500 font-bold text-xl">Phone</h1>
-                  <p class="text-[#7D7B7B] pr-5">+91 9680505799</p>
-                  <p class="text-[#7D7B7B] pr-5">+91 8502994824</p>
-               </div>
-            </div>
-            <div class="h-[170px] w-[550px] bg-white rounded-xl shadow-[8px_0_15px_rgba(0,0,0,0.3)] flex">
-               <div class="w-[20%] h-full flex justify-center items-center">
-                  <img src="https://img.icons8.com/?size=100&id=108813&format=png&color=000000" alt="addressicon" class="h-[60px] repeatanimation">
-               </div>
-               <div class="w-[80%] h-full flex justify-center flex-col">
-                  <h1 class="text-blue-500 font-bold text-xl">Email</h1>
-                  <p class="text-[#7D7B7B] pr-5">godarafinance8@gmail.com</p>
-                  <p class="text-[#7D7B7B] pr-5">rajgodara@gmail.com</p>
-               </div>
-            </div>
             
-         </div>
-      </div>
-   </div>
-   <footer>
-      <div class="md:h-[300px] h-auto w-full bg-blue-600 flex flex-col md:flex-row" >
-         <div class="md:w-[25%] w-[100%] h-full flex flex-col items-center ml-4">
-            <h1 class="font-bold text-3xl text-white mt-4">Godara Finance Solution</h1>
-            <p class="text-white mt-2 md:mr-0 mr-6">Your trusted partner in financel planing and welth management Securing furtures since 2007</p>
-            <div class="flex items-center mt-3 gap-7 w-[100%]">
-               <a href="#"><img src="https://img.icons8.com/?size=100&id=BrU2BBoRXiWq&format=png&color=000000" alt="insta logo" class="h-[50px]"></a>
-               <a href="#"><img src="https://img.icons8.com/?size=100&id=z657ovoGgS2o&format=png&color=000000" alt="insta logo" class="h-[50px]"></a>
-               <a href="#"><img src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=000000" alt="insta logo" class="h-[50px]"></a>
+            <nav class="hidden md:flex items-center">
+                <ul class="flex space-x-8 text-lg font-medium">
+                    <li><a href="#home" class="relative hover:text-blue-600 after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">Home</a></li>
+                    <li><a href="#about" class="relative hover:text-blue-600 after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">About</a></li>
+                    <li><a href="#services" class="relative hover:text-blue-600 after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">Services</a></li>
+                    <li><a href="#calculator" class="relative hover:text-blue-600 after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">Calculator</a></li>
+                    <li><a href="#contact" class="relative hover:text-blue-600 after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
+                </button>
             </div>
-         </div>
-         <div class="md:w-[25%] w-[100%] h-full flex flex-col pl-7 md:pl-12">
-            <h1 class="font-bold text-3xl text-white mt-4">Quick Links</h1>
-            <a href="#home" class="text-white mt-2">Home</a>
-            <a href="#services" class="text-white mt-2">service</a>
-            <a href="#about" class="text-white mt-2">About US</a>
-            <a href="#contact" class="text-white mt-2">Contact Us</a>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg">
+            <ul class="flex flex-col items-center space-y-4 py-4 text-lg font-medium">
+                <li><a href="#home" class="mobile-nav-link block py-2 px-4 hover:bg-blue-50 rounded-md">Home</a></li>
+                <li><a href="#about" class="mobile-nav-link block py-2 px-4 hover:bg-blue-50 rounded-md">About</a></li>
+                <li><a href="#services" class="mobile-nav-link block py-2 px-4 hover:bg-blue-50 rounded-md">Services</a></li>
+                <li><a href="#calculator" class="mobile-nav-link block py-2 px-4 hover:bg-blue-50 rounded-md">Calculator</a></li>
+                <li><a href="#contact" class="mobile-nav-link block py-2 px-4 hover:bg-blue-50 rounded-md">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="w-full min-h-screen flex items-center pt-20 md:pt-0">
+            <div class="container mx-auto flex flex-col md:flex-row items-center px-4">
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <div class="md:ml-7">
+                        <h1 class="font-serif text-4xl md:text-6xl font-bold text-gray-900 fade-in-down">Godara Finance Solution India</h1>
+                        <p class="text-blue-600 mt-2 text-xl font-semibold fade-in-left" style="animation-delay: 0.2s;">A Power Management Group</p>
+                        <p class="text-gray-600 mt-4 text-lg max-w-xl mx-auto md:mx-0 fade-in-left" style="animation-delay: 0.4s;">Focusing on dedicated service allows for deeper refinement, better user experience, and stronger trust built through consistency and dependability.</p>
+                        <a href="#services">
+                            <button class="relative overflow-hidden h-14 w-44 bg-green-500 text-white font-bold rounded-xl mt-8 cursor-pointer transition-transform duration-300 hover:scale-105 group">
+                                <span class="relative z-10">Explore Services</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 mt-10 md:mt-0 flex justify-center items-center">
+                    <img src="https://i.ibb.co/h7WJ3C0/hero-section-image-removebg-preview.png" alt="Financial planning illustration" class="max-w-md w-full fade-in-down">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-blue-50">
+            <div class="container mx-auto flex flex-col md:flex-row items-center px-4">
+                <div class="md:w-2/5 w-full flex justify-center items-center mb-10 md:mb-0">
+                    <img src="https://i.ibb.co/9gQG98C/ChatGPT-Image-Jun-13-2025-03-18-38-AM-removebg-preview.png" alt="A team discussing finance" class="max-w-sm w-full">
+                </div>
+                <div class="md:w-3/5 w-full md:pl-12">
+                    <h2 class="text-3xl md:text-5xl font-bold text-blue-700">Your Trusted Loan & Insurance Partner</h2>
+                    <p class="mt-6 text-base md:text-lg text-gray-600 leading-relaxed">
+                        Established in 2006, Godara Finance Solution India is a trusted financial services provider committed to supporting individuals and families with accessible and affordable financial solutions. We specialize in offering personal loans, home loans, and gold loans at lower interest rates, tailored to suit your needs. In addition to our loan services, we also provide insurance solutions to help you secure your future. At Godara Finance Solution India, we focus on building lasting relationships through trust, transparency, and a commitment to your financial growth.
+                    </p>
+                    <div class="flex flex-wrap w-full justify-center md:justify-start gap-5 mt-8">
+                        <div class="bg-white p-6 w-48 shadow-lg rounded-2xl flex flex-col justify-center items-center text-center transition-transform hover:scale-105">
+                            <h3 class="font-bold text-3xl text-green-700">1000+</h3>
+                            <p class="mt-1 text-gray-600">Loans Approved</p>
+                        </div>
+                        <div class="bg-white p-6 w-48 shadow-lg rounded-2xl flex flex-col justify-center items-center text-center transition-transform hover:scale-105">
+                            <h3 class="font-bold text-3xl text-blue-700">8.5%</h3>
+                            <p class="mt-1 text-gray-600">Starting Interest</p>
+                        </div>
+                        <div class="bg-white p-6 w-48 shadow-lg rounded-2xl flex flex-col justify-center items-center text-center transition-transform hover:scale-105">
+                            <h3 class="font-bold text-3xl text-green-700">98%</h3>
+                            <p class="mt-1 text-gray-600">Happy Customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20">
+            <div class="container mx-auto text-center px-4">
+                <h2 class="text-3xl md:text-5xl font-bold text-blue-700">Our Loan & Insurance Services</h2>
+                <p class="text-gray-600 mt-4 max-w-3xl mx-auto">We offer comprehensive financial solutions tailored to your needs, featuring competitive interest rates, flexible loan options, and a commitment to excellent customer service you can trust.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <img src="https://img.icons8.com/?size=100&id=80347&format=png&color=3B82F6" alt="Home icon" class="h-16 bounce-icon">
+                        <h3 class="mt-4 text-xl text-blue-600 font-bold font-serif">Home Loans</h3>
+                        <p class="text-center text-sm text-gray-500 mt-3 flex-grow">Get your dream home with our competitive home loan rates. Quick approval and flexible repayment options.</p>
+                        <a href="home.html" class="mt-6 inline-block bg-green-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-600 transition-colors">Apply Now</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <img src="https://img.icons8.com/?size=100&id=20749&format=png&color=3B82F6" alt="Personal finance icon" class="h-16 bounce-icon">
+                        <h3 class="mt-4 text-xl text-blue-600 font-bold font-serif">Personal Loans</h3>
+                        <p class="text-center text-sm text-gray-500 mt-3 flex-grow">Meet your personal financial needs with our hassle-free personal loans at attractive interest rates.</p>
+                        <a href="home.html" class="mt-6 inline-block bg-green-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-600 transition-colors">Apply Now</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <img src="https://cdn-icons-png.flaticon.com/512/15150/15150868.png" alt="Car icon" class="h-16 bounce-icon">
+                        <h3 class="mt-4 text-xl text-blue-600 font-bold font-serif">Vehicle Loans</h3>
+                        <p class="text-center text-sm text-gray-500 mt-3 flex-grow">Drive your dream car or bike today. We offer vehicle loans with the lowest interest rates in the market.</p>
+                        <a href="home.html" class="mt-6 inline-block bg-green-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-600 transition-colors">Apply Now</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <img src="https://img.icons8.com/?size=100&id=16231&format=png&color=3B82F6" alt="Insurance shield icon" class="h-16 bounce-icon">
+                        <h3 class="mt-4 text-xl text-blue-600 font-bold font-serif">Insurance</h3>
+                        <p class="text-center text-sm text-gray-500 mt-3 flex-grow">Protect your assets and loved ones with our comprehensive insurance plans tailored to your needs.</p>
+                        <a href="incurence.html" class="mt-6 inline-block bg-green-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-600 transition-colors">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="calculator" class="py-20 bg-gray-100">
+            <div class="container mx-auto text-center px-4">
+                <h2 class="text-3xl md:text-5xl font-bold text-blue-700">EMI Calculator</h2>
+                <p class="text-gray-600 mt-4 max-w-3xl mx-auto">Estimate your Equated Monthly Installment (EMI) for your loan. Adjust the sliders to see how the amount, tenure, and interest rate affect your monthly payments.</p>
+                <div class="max-w-2xl mx-auto mt-12 p-8 bg-white rounded-2xl shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div>
+                            <label for="loanAmount" class="font-semibold text-gray-700 block mb-2">Loan Amount (₹)</label>
+                            <input type="text" id="loanAmountValue" value="500000" class="w-full font-bold text-lg p-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none text-center">
+                            <input type="range" id="loanAmount" min="50000" max="5000000" step="10000" value="500000" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mt-2">
+                        </div>
+                        <div>
+                            <label for="interestRate" class="font-semibold text-gray-700 block mb-2">Interest Rate (%)</label>
+                            <input type="text" id="interestRateValue" value="8.5" class="w-full font-bold text-lg p-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none text-center">
+                            <input type="range" id="interestRate" min="8" max="20" step="0.1" value="8.5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mt-2">
+                        </div>
+                        <div>
+                            <label for="loanTenure" class="font-semibold text-gray-700 block mb-2">Loan Tenure (Yrs)</label>
+                            <input type="text" id="loanTenureValue" value="5" class="w-full font-bold text-lg p-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none text-center">
+                            <input type="range" id="loanTenure" min="1" max="30" step="1" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mt-2">
+                        </div>
+                    </div>
+                    <div class="mt-8 p-6 bg-blue-50 rounded-lg border-2 border-dashed border-blue-200">
+                        <h3 class="text-lg font-semibold text-gray-700">Your Monthly EMI</h3>
+                        <p class="text-4xl font-bold text-blue-600 mt-2" id="emiResult">₹ 10,259</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-green-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-5xl font-bold text-blue-700">Get In Touch</h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto">Ready to start your financial journey? Contact us today for a free consultation.</p>
+                </div>
+                <div class="flex flex-col md:flex-row gap-10">
+                    <div class="md:w-1/2 w-full">
+                        <form id="contactForm" class="bg-white p-8 rounded-2xl shadow-lg">
+                            <div class="mb-5">
+                                <label for="name" class="block text-blue-600 text-lg font-bold mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="w-full bg-gray-100 p-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter your name" required>
+                                <p id="nameError" class="text-red-500 text-sm mt-1 hidden">Name is required.</p>
+                            </div>
+                            <div class="mb-5">
+                                <label for="number" class="block text-blue-600 text-lg font-bold mb-2">Mobile Number</label>
+                                <input type="tel" id="number" name="number" class="w-full bg-gray-100 p-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter your 10-digit number" required pattern="\d{10}">
+                                <p id="numberError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid 10-digit mobile number.</p>
+                            </div>
+                            <div class="mb-5">
+                                <label for="message" class="block text-blue-600 text-lg font-bold mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full bg-gray-100 p-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-400" placeholder="Your message here..." required></textarea>
+                                <p id="messageError" class="text-red-500 text-sm mt-1 hidden">Message cannot be empty.</p>
+                            </div>
+                            <button type="submit" class="w-full bg-green-500 h-14 rounded-xl text-white font-bold text-lg cursor-pointer hover:bg-green-600 transition-all duration-300">Submit</button>
+                        </form>
+                    </div>
+
+                    <div class="md:w-1/2 w-full space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg flex items-center">
+                            <img src="https://img.icons8.com/?size=100&id=107436&format=png&color=3B82F6" alt="address icon" class="h-12 w-12 mr-5">
+                            <div>
+                                <h3 class="text-blue-600 font-bold text-xl">Address</h3>
+                                <p class="text-gray-600">Gandhi Chowk, Main Market, Near Kishan Beej Bhandar, Surajgarh, 333029</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg flex items-center">
+                            <img src="https://img.icons8.com/?size=100&id=108644&format=png&color=3B82F6" alt="phone icon" class="h-12 w-12 mr-5">
+                            <div>
+                                <h3 class="text-blue-600 font-bold text-xl">Phone</h3>
+                                <p class="text-gray-600">+91 9680505799</p>
+                                <p class="text-gray-600">+91 8502994824</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg flex items-center">
+                            <img src="https://img.icons8.com/?size=100&id=108813&format=png&color=3B82F6" alt="email icon" class="h-12 w-12 mr-5">
+                            <div>
+                                <h3 class="text-blue-600 font-bold text-xl">Email</h3>
+                                <p class="text-gray-600">godarafinance8@gmail.com</p>
+                                <p class="text-gray-600">rajgodara@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-800 text-white">
+        <div class="container mx-auto py-12 px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="md:col-span-2 lg:col-span-1">
+                    <h3 class="font-bold text-2xl">Godara Finance Solution</h3>
+                    <p class="mt-4 text-blue-200">Your trusted partner in financial planning and wealth management. Securing futures since 2006.</p>
+                    <div class="flex items-center mt-6 space-x-4">
+                        <a href="#"><img src="https://img.icons8.com/?size=100&id=BrU2BBoRXiWq&format=png&color=FFFFFF" alt="Instagram logo" class="h-8 transition-transform hover:scale-110"></a>
+                        <a href="#"><img src="https://img.icons8.com/?size=100&id=z657ovoGgS2o&format=png&color=FFFFFF" alt="Facebook logo" class="h-8 transition-transform hover:scale-110"></a>
+                        <a href="#"><img src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=FFFFFF" alt="LinkedIn logo" class="h-8 transition-transform hover:scale-110"></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-2xl">Quick Links</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#home" class="text-blue-200 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-blue-200 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#about" class="text-blue-200 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="text-blue-200 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h3 class="font-bold text-2xl">Contact Info</h3>
+                    <ul class="mt-4 space-y-3 text-blue-200">
+                        <li class="flex items-start"><img src="https://img.icons8.com/?size=100&id=107436&format=png&color=FFFFFF" alt="icon" class="h-6 w-6 inline mr-3 mt-1 flex-shrink-0"><span>Gandhi Chowk, Main Market, Surajgarh, 333029</span></li>
+                        <li class="flex items-center"><img src="https://img.icons8.com/?size=100&id=WV326xpsBMyb&format=png&color=FFFFFF" alt="icon" class="h-6 w-6 inline mr-3"><span>+91 9680505799</span></li>
+                        <li class="flex items-center"><img src="https://img.icons8.com/?size=100&id=108806&format=png&color=FFFFFF" alt="icon" class="h-6 w-6 inline mr-3"><span>godarafinance8@gmail.com</span></li>
+                        <li class="flex items-center"><img src="https://img.icons8.com/?size=100&id=21517&format=png&color=FFFFFF" alt="icon" class="h-6 w-6 inline mr-3"><span>Mon - Sun: 9AM - 6PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-10 border-t border-blue-700 pt-6 text-center text-blue-300 text-sm">
+                <p>&copy; <span id="currentYear"></span> Godara Finance Solution India. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        // --- MOBILE MENU ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- EMAILJS & FORM HANDLING ---
+        (function(){
+            emailjs.init({ publicKey: "SLU7axNetQo_WJo-3" });
+        })();
+
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            if (!validateForm()) {
+                alert('Please fill out the form correctly.');
+                return;
+            }
             
-         </div>
-         <div class="md:w-[25%] w-[100%] h-full flex flex-col items-start ml-4">
-            <h1 class="font-bold text-3xl text-white mt-4">Contact Info</h1>
-            <p class="text-white mt-2">Gandhi chock ,main market,near kishan beej bandhar,surjgarh,333029</p>
-            <p class="text-white mt-2"><img src="https://img.icons8.com/?size=100&id=WV326xpsBMyb&format=png&color=000000" alt="icon" class="h-[20px] inline mr-1">+919057164791</p>
-            <p class="text-white mt-2"><img src="https://img.icons8.com/?size=100&id=108806&format=png&color=000000" alt="icon" class="h-[30px] inline mr-1">godarafinance8@gmail.com</p>
-            <p class="text-white mt-2"><img src="https://img.icons8.com/?size=100&id=21517&format=png&color=000000" alt="icon" class="h-[30px] inline mr-1">Mon-sun 9AM-6PM</p>
+            const params = {
+                name: document.getElementById("name").value,
+                number: document.getElementById("number").value,
+                message: document.getElementById("message").value,
+                time: new Date().toLocaleString(),
+            };
+
+            const serviceID = "service_t6lmqsj";
+            const templateID = "template_xyc2bcg";
+
+            emailjs.send(serviceID, templateID, params)
+                .then(res => {
+                    alert("Message sent successfully!");
+                    contactForm.reset();
+                    hideAllErrors();
+                })
+                .catch(err => {
+                    console.error("EmailJS Error:", err);
+                    alert("Error: " + JSON.stringify(err));
+                });
+        });
+
+        // --- FORM VALIDATION ---
+        const nameInput = document.getElementById('name');
+        const numberInput = document.getElementById('number');
+        const messageInput = document.getElementById('message');
+        const nameError = document.getElementById('nameError');
+        const numberError = document.getElementById('numberError');
+        const messageError = document.getElementById('messageError');
+
+        function validateForm() {
+            let isValid = true;
+            hideAllErrors();
             
-         </div>
-      </div>
-   </footer>
-   <script src="index.js"></script>
+            if (nameInput.value.trim() === '') {
+                nameError.classList.remove('hidden');
+                isValid = false;
+            }
+            if (!/^\d{10}$/.test(numberInput.value)) {
+                numberError.classList.remove('hidden');
+                isValid = false;
+            }
+            if (messageInput.value.trim() === '') {
+                messageError.classList.remove('hidden');
+                isValid = false;
+            }
+            return isValid;
+        }
+
+        function hideAllErrors() {
+            nameError.classList.add('hidden');
+            numberError.classList.add('hidden');
+            messageError.classList.add('hidden');
+        }
+
+        // --- EMI CALCULATOR ---
+        const loanAmountSlider = document.getElementById('loanAmount');
+        const loanAmountValue = document.getElementById('loanAmountValue');
+        const interestRateSlider = document.getElementById('interestRate');
+        const interestRateValue = document.getElementById('interestRateValue');
+        const loanTenureSlider = document.getElementById('loanTenure');
+        const loanTenureValue = document.getElementById('loanTenureValue');
+        const emiResult = document.getElementById('emiResult');
+
+        function formatCurrency(num) {
+            return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(num);
+        }
+
+        function calculateEMI() {
+            const p = parseFloat(loanAmountSlider.value);
+            const r = parseFloat(interestRateSlider.value) / 12 / 100;
+            const n = parseFloat(loanTenureSlider.value) * 12;
+
+            if (p && r && n) {
+                const emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+                emiResult.textContent = formatCurrency(emi);
+            }
+        }
+        
+        loanAmountSlider.addEventListener('input', (e) => {
+            loanAmountValue.value = e.target.value;
+            calculateEMI();
+        });
+        interestRateSlider.addEventListener('input', (e) => {
+            interestRateValue.value = e.target.value;
+            calculateEMI();
+        });
+        loanTenureSlider.addEventListener('input', (e) => {
+            loanTenureValue.value = e.target.value;
+            calculateEMI();
+        });
+        
+        loanAmountValue.addEventListener('change', (e) => {
+            loanAmountSlider.value = e.target.value;
+            calculateEMI();
+        });
+        interestRateValue.addEventListener('change', (e) => {
+            interestRateSlider.value = e.target.value;
+            calculateEMI();
+        });
+        loanTenureValue.addEventListener('change', (e) => {
+            loanTenureSlider.value = e.target.value;
+            calculateEMI();
+        });
+
+        // Initial calculation
+        calculateEMI();
+
+        // --- DYNAMIC YEAR IN FOOTER ---
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+    </script>
 </body>
 </html>
